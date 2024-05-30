@@ -2,7 +2,7 @@
 Users views.
 """
 
-from flask import jsonify, request, abort
+from flask import jsonify, request
 from api.v1.views import app_views
 from api.v1.utils.usersUtil import Users
 
@@ -78,7 +78,7 @@ def logout(session_id):
 
 
 
-@app_views.route('/my_chores/<session_id>')
+@app_views.route('/my_chores/<session_id>', strict_slashes=False)
 def get_my_chores(session_id):
     """
     Get my chores.
