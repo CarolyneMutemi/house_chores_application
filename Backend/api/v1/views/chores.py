@@ -7,7 +7,7 @@ from api.v1.views import app_views
 from api.v1.utils.choresUtilities import Chores
 
 
-@app_views.route('/create_chore/<session_id>', methods=['POST'])
+@app_views.route('/create_chore/<session_id>', methods=['POST'], strict_slashes=False)
 def create_chore(session_id):
     """
     Creates a chore and returns a chore_token.
@@ -33,11 +33,14 @@ def create_chore(session_id):
     return jsonify(result)
 
 
-@app_views.route('/delete_chore/<session_id>/<chore_token>')
-def delete_chore(session_id, chore_token):
+@app_views.route('/delete_chore/<session_id>', methods = ['DELETE'], strict_slashes=False)
+def delete_chore(session_id):
     """
     Deletes a chore.
     """
+    chore_token = request.form.get('chore_token')
+    if not chore_token:
+        return jsonify({'error': 'chore_token missing'}), 400
     result = Chores.delete_chore(session_id, chore_token)
     if not result:
         return jsonify({'error': 'chore not found'}), 403
@@ -47,7 +50,7 @@ def delete_chore(session_id, chore_token):
     return jsonify(result)
 
 
-@app_views.route('/get_chore/<session_id>/<chore_token>')
+@app_views.route('/get_chore/<session_id>/<chore_token>', strict_slashes=False)
 def get_chore(session_id, chore_token):
     """
     Gets a chore.

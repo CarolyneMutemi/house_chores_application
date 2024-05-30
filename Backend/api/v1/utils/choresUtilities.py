@@ -42,6 +42,8 @@ class Chores:
             provider = Providers.get_provider_from_id(provider_id)
             if not service or not provider:
                 return None
+            if service['name'] not in provider['services']:
+                return {'error': 'provider service mismatch'}
             chores_collection = mongo.db.chores
             chore_token = str(uuid4())
             inserted_chore = chores_collection.insert_one({'name': service['name'], 'provider_id': provider_id, 'client_id': user['id'], 'date': date, 'chore_token': chore_token})
