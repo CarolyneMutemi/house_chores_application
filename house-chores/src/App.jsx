@@ -3,6 +3,7 @@ import Home from "./home"
 import Login from "./log-in"
 import Services from "./services"
 import SpecificService from "./specific-service"
+import Reviews from "./reviews"
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
     <Home />
     <Login />
     <Services />
-    <SpecificService/>
+    <SpecificService />
+    <Reviews />
   </>
   )
 }
