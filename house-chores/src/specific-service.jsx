@@ -6,7 +6,7 @@ export default function SpecificService() {
             <h2>Doing dishes</h2>
             <span className="search-span">
               <input type="text" placeholder="Search a town..." id="search"/>
-              <label for="search"><img src="search.svg" className="search-icon"/></label>
+              <label htmlFor="search"><img src="search.svg" className="search-icon"/></label>
             </span>
             <div className="service-providers">
               <section className="each-provider">

@@ -52,7 +52,7 @@ export default function Reviews() {
                     </div>
                 </div>
                 <div className="add-review">
-                  <label for="comment"><img src="add-circle.svg" className="add-comment-icon"/></label>
+                  <label htmlFor="comment"><img src="add-circle.svg" className="add-comment-icon"/></label>
                   <textarea id="comment" rows="1" placeholder="Add a comment..."></textarea>
                   <img src="send.svg" className="send-comment-icon"/>
                 </div>

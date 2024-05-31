@@ -485,6 +485,7 @@ header h1 {
     align-items: center;
     height: 80%;
     border: 1px solid #114f7e;
+    display: none;
 }
 
 .align-reviews {
