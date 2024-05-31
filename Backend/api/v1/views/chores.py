@@ -33,12 +33,11 @@ def create_chore(session_id):
     return jsonify(result)
 
 
-@app_views.route('/delete_chore/<session_id>', methods = ['DELETE'], strict_slashes=False)
-def delete_chore(session_id):
+@app_views.route('/delete_chore/<session_id>/<chore_token>', methods = ['DELETE'], strict_slashes=False)
+def delete_chore(session_id, chore_token):
     """
     Deletes a chore.
     """
-    chore_token = request.form.get('chore_token')
     if not chore_token:
         return jsonify({'error': 'chore_token missing'}), 400
     result = Chores.delete_chore(session_id, chore_token)
