@@ -158,7 +158,8 @@ class Users:
         user_chores = user.get('active_chores')
         for chore in user_chores:
             chore_token = chore.get('chore_token')
-            if redis_client.exists(f'chore_{chore_token}'):
+            key = f'chore_{chore_token}'
+            if redis_client.exists(key):
                 continue
             else:
                 Chores.delete_expired_chore(chore)

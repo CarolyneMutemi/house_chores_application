@@ -20,7 +20,8 @@ def convert_chore_obj(chore):
     converted_chore = {'id': chore['id'],
                        'client_name': client_name,
                        'provider_name': provider_name,
-                       'date': chore['date']
+                       'date': chore['date'],
+                       'chore_token': chore['chore_token']
                        }
     return converted_chore
 
