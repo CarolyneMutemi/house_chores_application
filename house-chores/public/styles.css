@@ -490,22 +490,16 @@ header h1 {
 .align-reviews {
     position: relative;
     border: 1px solid blueviolet;
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     height: 95%;
-    width: 80%;
-    max-width: 700px;
+    width: 50%;
+    max-width: 800px;
     padding: 10px;
 }
 
 .align-reviews h3{
-    position: sticky;
-    border-bottom: 1px solid;
+    border: 1px solid;
     text-align: center;
-    margin-top: 30px;
-    width: 60%;
-    margin-left: 20%;
+    margin-top: 10px;
 }
 
 .user-review {
@@ -527,12 +521,9 @@ header h1 {
 
 .users-reviews {
     border: 1px solid saddlebrown;
-    border-radius: 20px;
-    padding: 10px;
     height: 80%;
     overflow-y: auto;
     scrollbar-width: thin;
-    flex: 1;
 }
 
 .add-review {
