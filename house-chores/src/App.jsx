@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, MemoryRouter } from 'react-router-dom';
 import Header from "./Header"
 import Home from "./home"
 import Login from "./log-in"
@@ -14,18 +14,17 @@ function App() {
   return (
   <>
   <Router>
-  <Header/>
+    <Header/>
     <Routes>
-      <Route path='/' Component={Home} />
-      <Route path='/login' Component={SignIn} />
-      <Route path='/register' Component={Register} />
-      <Route path='/services' Component={Services} />
-      <Route path='*' element={<p>Oops!</p>} />
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<SignIn />} />
+      <Route path='/register' element={<Register/>} />
+      <Route path='/services' element={<Services/>} />
+      <Route path='/services/:serviceId' element={<SpecificService />} />
+      <Route path='/reviews/:providerId' element={<Reviews />} />
+      <Route path='/rates/:providerId' element={<Rates />} />
+      <Route path='/mychores' element={<MyChores />} />
     </Routes>
-      <SpecificService />
-      <Reviews />
-      <Rates />
-      <MyChores />
   </Router>
   </>
   )

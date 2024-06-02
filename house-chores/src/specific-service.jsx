@@ -1,3 +1,12 @@
+import search from "./assets/search.svg"
+import price from "./assets/pricetags.svg"
+import chat from "./assets/chatbox.svg"
+import call from "./assets/call.svg"
+import addCircle from "./assets/add-circle.svg"
+import ellipsis from "./assets/ellipsis-horizontal-circle.svg"
+import checkMark from "./assets/checkmark-circle.svg"
+import { Link } from "react-router-dom"
+
 
 export default function SpecificService() {
     return (
@@ -6,7 +15,7 @@ export default function SpecificService() {
             <h2>Doing dishes</h2>
             <span className="search-span">
               <input type="text" placeholder="Search a town..." id="search"/>
-              <label htmlFor="search"><img src="search.svg" className="search-icon"/></label>
+              <label htmlFor="search"><img src={search} className="search-icon"/></label>
             </span>
             <div className="service-providers">
               <section className="each-provider">
@@ -14,13 +23,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -29,13 +38,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko, Kibwezi, Makindu, Kiboko, Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -44,13 +53,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -59,13 +68,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -74,13 +83,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -89,13 +98,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -104,13 +113,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -119,13 +128,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -134,13 +143,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>
@@ -149,13 +158,13 @@ export default function SpecificService() {
                 <div className="provider-data">
                   <p className="towns">Available in: <span className="towns-available">Kibwezi, Makindu, Kiboko</span></p>
                   <div className="service-data">
-                    <img src="pricetags.svg" className="provider-icons"/>
-                    <img src="chatbox.svg" className="provider-icons"/>
-                    <img src="call.svg" className="provider-icons"/>
-                    <img src="add-circle.svg" className="provider-icons"/>
-                    <img src="ellipsis-horizontal-circle.svg" className="provider-icons toggle-add-status"/>
-                    <img src="checkmark-circle.svg" className="provider-icons toggle-add-status"/>
-                    <a href="#" className="provider-reviews">Reviews</a>
+                    <Link to="/rates/1"><img src={price} className="provider-icons"/></Link>
+                    <img src={chat} className="provider-icons"/>
+                    <img src={call} className="provider-icons"/>
+                    <img src={addCircle} className="provider-icons"/>
+                    <img src={ellipsis} className="provider-icons toggle-add-status"/>
+                    <img src={checkMark} className="provider-icons toggle-add-status"/>
+                    <Link to="/reviews/1" className="provider-reviews">Reviews</Link>
                   </div>
                 </div>
               </section>

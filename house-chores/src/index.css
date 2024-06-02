@@ -41,6 +41,7 @@ header {
 
 header h1 {
     user-select: none;
+    text-decoration: none;
 }
 
 .not-logged-in a, .logged-in a {
@@ -113,7 +114,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    
 }
 
 .log-in {
@@ -125,7 +126,7 @@ header h1 {
     overflow: hidden;
     height: 90%;
     width: 400px;
-    display: none;
+    
 }
 
 .register {
@@ -137,7 +138,7 @@ header h1 {
     overflow: hidden;
     height: 95%;
     width: 400px;
-    display: none;
+    
 }
 
 .welcome-back-text {
@@ -227,7 +228,7 @@ header h1 {
     height: 80%;
     justify-content: center;
     align-items: center;
-    display: none;
+    
 }
 
 .services-section {
@@ -286,7 +287,7 @@ header h1 {
     flex-direction: column;
     align-items: center;
     height: 85%;
-    display: none;
+    
 }
 
 .specific-service h2 {
@@ -419,7 +420,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    
 }
 
 .rates-pop-up{
@@ -485,22 +486,27 @@ header h1 {
     align-items: center;
     height: 80%;
     border: 1px solid #114f7e;
-    display: none;
+    
 }
 
 .align-reviews {
     position: relative;
     border: 1px solid blueviolet;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     height: 95%;
-    width: 50%;
-    max-width: 800px;
+    width: 80%;
+    max-width: 700px;
     padding: 10px;
 }
 
 .align-reviews h3{
     border: 1px solid;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 30px;
+    width: 60%;
+    margin-left: 20%;
 }
 
 .user-review {
@@ -522,6 +528,8 @@ header h1 {
 
 .users-reviews {
     border: 1px solid saddlebrown;
+    border-radius: 20px;
+    padding: 10px;
     height: 80%;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -563,7 +571,7 @@ header h1 {
     margin-left: 25%;
     text-align: center;
     overflow-y: auto;
-    display: none;
+    
 }
 
 .my-chores p {
