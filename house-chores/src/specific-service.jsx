@@ -6,10 +6,19 @@ import addCircle from "./assets/add-circle.svg"
 import ellipsis from "./assets/ellipsis-horizontal-circle.svg"
 import checkMark from "./assets/checkmark-circle.svg"
 import { Link, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 
 
 export default function SpecificService() {
   const { serviceId } = useParams()
+  const {service, setService} = useState('')
+
+  useEffect(() => {
+    fetch(`http://localhost:/5000/services/${serviceId}`)
+    .then((data) => data.json())
+    .then((service) => setService(service.name))
+  }, [])
+
     return (
         <>
         <div className="specific-service">
