@@ -14,6 +14,7 @@ def get_all_services():
     services = Services.get_all_services()
     for service in services:
         del service['categories']
+    print(services)
     return jsonify(services)
 
 @app_views.route("/services/<service_id>", strict_slashes=False)

@@ -42,5 +42,6 @@ class Services:
         all_services = Services.get_all_services()
         for service in all_services:
             if service['id'] == service_id:
+                del service['categories']
                 return service
         return None
