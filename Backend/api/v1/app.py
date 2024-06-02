@@ -12,7 +12,7 @@ app.register_blueprint(app_views)
 app.config["MONGO_URI"] = "mongodb://localhost/house_chores"
 mongo.init_app(app)
 
-CORS(app, origins="0.0.0.0")
+CORS(app)
 
 @app.errorhandler(404)
 def not_found(error) -> str:
