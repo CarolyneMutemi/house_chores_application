@@ -14,7 +14,7 @@ export default function Reviews() {
         <>
         <div className="provider-reviews">
             <div className="align-reviews">
-                <span class="icon-close" onClick={close}><img src={closeIcon} alt="close icon" /></span>
+                <span className="icon-close" onClick={close}><img src={closeIcon} alt="close icon" /></span>
                 <h3>Provider one reviews</h3>
                 <div className="users-reviews">
                     <div className="user-review">

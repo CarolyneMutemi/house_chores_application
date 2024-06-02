@@ -5,10 +5,11 @@ import call from "./assets/call.svg"
 import addCircle from "./assets/add-circle.svg"
 import ellipsis from "./assets/ellipsis-horizontal-circle.svg"
 import checkMark from "./assets/checkmark-circle.svg"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 
 export default function SpecificService() {
+  const { serviceId } = useParams()
     return (
         <>
         <div className="specific-service">

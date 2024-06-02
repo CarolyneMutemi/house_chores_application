@@ -12,7 +12,7 @@ export default function Services() {
   useEffect(() => {
     fetch('http://localhost:5000/services')
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setServices(data))
   }, [])
 
   function close() {
@@ -26,16 +26,9 @@ export default function Services() {
               <img src={worker} alt="Minion at work." className="worker-minion"/>
               <h3>Services</h3>
               <div className="scroll-services">
-                <Link to='/services/1'><button>Doing dishes</button></Link>
-                <Link to='/services/2'><button>Full house clean-up</button></Link>
-                <Link to='/services/3'><button>Item pick-up</button></Link>
-                <Link to='/services/4'><button>Pet sitting</button></Link>
-                <Link to='/services/5'><button>Elderly/Invalid sitting</button></Link>
-                <Link to='/services/6'><button>Baby sitting</button></Link>
-                <Link to='/services/7'><button>Party catering</button></Link>
-                <Link to='/services/8'><button>Food preparation</button></Link>
-                <Link to='/services/9'><button>Kitchen clean-up</button></Link>
-                <Link to='/services/10'><button>Laundry clean-up</button></Link>
+                {
+                  services && services.map((service) => <Link to={`/services/${service.id}`} key={service.id}><button>{service.name}</button></Link>)
+                }
               </div>
             </div>
         </div>
