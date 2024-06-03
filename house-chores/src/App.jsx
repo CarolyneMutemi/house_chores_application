@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, MemoryRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./Header"
 import Home from "./home"
 import Login from "./log-in"
@@ -10,7 +10,7 @@ import Reviews from "./reviews"
 import Rates from "./rates"
 import MyChores from "./my-chores"
 
-function App() {
+function App() {  
   return (
   <>
   <Router>

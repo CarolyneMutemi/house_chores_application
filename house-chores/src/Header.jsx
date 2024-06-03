@@ -26,7 +26,7 @@ function Header() {
                 </div>
                 <div className="logged-in hide">
                   <Link to="/services" className={location.pathname === '/' ? 'hide' : ''}>Services</Link>
-                  <Link to="/mychores">My chores</Link>
+                  <Link to="/mychores" reloadDocument>My chores</Link>
                   <Link to="/">Log out</Link>
                 </div>
             </header>

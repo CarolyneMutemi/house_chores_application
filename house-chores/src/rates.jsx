@@ -1,22 +1,37 @@
 import closeIcon from './assets/close-circle.svg'
 import banana from "./assets/banana-rates.png"
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 export default function Rates() {
+  const location = useLocation()
+  const {provider, service} = location.state
+
+  console.log(provider, service)
+
   const navigate = useNavigate()
   function close() {
     navigate(-1)
   }
+
+  console.log(service in provider.services)
+  console.log(provider.services[service])
     return (
         <>
         <div className="align-rates">
             <div className="rates-pop-up">
               <span className="icon-close" onClick={close}><img src={closeIcon} alt="close icon" /></span>
               <img src={banana} alt="Minion hugging bananas." className="minion-rates"/>
-              <h3>Sharon Muthoni's Rates</h3>
+              <h3>{provider.name}'s Rates</h3>
               <div className="scroll-rates">
-                <div className="rate-category">
+                {service in provider.services && Object.entries(provider.services[service]).map(([key, value]) => 
+                    <div className="rate-category" key={key}>
+                      <h4>{key}</h4>
+                      <p>{value}</p>
+                    </div>
+                  )
+                }
+                {/* <div className="rate-category">
                   <h4>One bedroom</h4>
                   <p>8k - 10k </p>
                 </div>
@@ -47,7 +62,7 @@ export default function Rates() {
                 <div className="rate-category">
                   <h4>One bedroom</h4>
                   <p>8k - 10k </p>
-                </div>
+                </div> */}
               </div>
             </div>
         </div>
