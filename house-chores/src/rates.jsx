@@ -31,38 +31,6 @@ export default function Rates() {
                     </div>
                   )
                 }
-                {/* <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div>
-                <div className="rate-category">
-                  <h4>One bedroom</h4>
-                  <p>8k - 10k </p>
-                </div> */}
               </div>
             </div>
         </div>
