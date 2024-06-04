@@ -14,8 +14,6 @@ export default function Rates() {
     navigate(-1)
   }
 
-  console.log(service in provider.services)
-  console.log(provider.services[service])
     return (
         <>
         <div className="align-rates">

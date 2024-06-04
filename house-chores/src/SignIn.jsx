@@ -9,6 +9,21 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 export default function SignIn() {
   const navigate = useNavigate()
 
+  function togglePassword() {
+    let showPassword = document.getElementById('login-show')
+    let hidePassword = document.getElementById('login-hide');
+    let password = document.getElementById('password');
+    if (password.type === 'password'){
+      password.type = 'text';
+      hidePassword.classList.add('hide')
+      showPassword.classList.remove('hide')
+    } else {
+      password.type = 'password'
+      hidePassword.classList.remove('hide')
+      showPassword.classList.add('hide')
+    }
+  }
+
   function close() {
     navigate(-1)
   }
@@ -24,14 +39,14 @@ export default function SignIn() {
                 <input type="email" placeholder="Email" minLength="5"  className="username" id="email" required/>
                 <label htmlFor="email"><img src={mailIcon} className="email-icon"/></label><br/>
                 <input type="password" placeholder="Password" minLength="5" className="password" id="password" required/>
-                <label><img src={closeEye} className="hidden-password hide"/></label>
-                <label><img src={openEye} className="clear-password"/></label><br/>
+                <label><img src={closeEye} className="hidden-password" id='login-show' onClick={togglePassword}/></label>
+                <label><img src={openEye} className="clear-password hide" id='login-hide' onClick={togglePassword}/></label><br/>
                 <div className="user-options">
-                  <a href="#">Don't have an account?</a>
+                  <Link to='/register' replace >Don't have an account?</Link>
                   <a href="#">Forgot password?</a>
                 </div>
-                <input type="submit" value="Log in" className="log-in-button" />
               </form>
+              <button className="log-in-button">Log in</button>
             </div>
             </div>
         </>
