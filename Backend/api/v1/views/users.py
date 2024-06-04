@@ -63,7 +63,7 @@ def user_login():
 
     result = Users.log_in(email, password)
     if not result:
-        return jsonify({'error': 'email not found'}), 403
+        return jsonify({'error': 'email not found'}), 404
     if 'error' in result:
         return jsonify(result), 403
     return jsonify(result)
