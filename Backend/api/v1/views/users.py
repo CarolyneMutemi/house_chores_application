@@ -23,16 +23,20 @@ def register_client():
     """
     Registers a client.
     """
-    first_name = request.form.get('first_name')
+    if request.content_type != 'application/json':
+        response = jsonify({"error": "Unsupported Media Type"})
+        response.status_code = 415
+        return response
+    first_name = request.json.get('first_name')
     if not first_name:
         return jsonify({'error': 'first_name missing'}), 400
-    last_name = request.form.get('last_name')
+    last_name = request.json.get('last_name')
     if not last_name:
         return jsonify({'error': 'last_name missing'}), 400
-    email = request.form.get('email')
+    email = request.json.get('email')
     if not email:
         return jsonify({'error': 'email missing'}), 400
-    password = request.form.get('password')
+    password = request.json.get('password')
     if not password:
         return jsonify({'error': 'password missing'}), 400
     result = Users.register_user(first_name, last_name, email, password)
@@ -49,8 +53,8 @@ def user_login():
     """
     Log in endpoint.
     """
-    email = request.form.get('email')
-    password = request.form.get('password')
+    email = request.json.get('email')
+    password = request.json.get('password')
 
     if not email:
         return jsonify({'error': 'missing email'}), 403
@@ -94,7 +98,7 @@ def post_review(session_id, provider_id):
     """
     Posts a review.
     """
-    review = request.form.get('review')
+    review = request.json.get('review')
     if not review:
         return jsonify({'error': 'review missing'}), 403
     result = Users.post_review(session_id, provider_id, review)

@@ -45,13 +45,12 @@ class Users:
         if user_exists:
             return {'error': 'user exists'}
         api_key = os.getenv('API_KEY')
-        validate_email = requests.post("https://api.verifalia.com/v2.5/email-validations",
-                                       headers={"Content-Type": "application/json"},
-                                       auth=('carolmutemi', api_key),
-                                       data="{entries: [{inputData: '%s'}]}" %email,
+        params = {'apiKey': api_key, 'emailAddress': email}
+        validate_email = requests.get("https://emailverification.whoisxmlapi.com/api/v3",
+                                       params=params,
                                        timeout=10)
-        is_deliverable = validate_email.json()['entries']['data'][0]['classification']
-        if is_deliverable == 'Undeliverable':
+        is_deliverable = validate_email.json().get('smtpCheck')
+        if is_deliverable:
             return {'error': 'mail undeliverable'}
         users_collection = mongo.db.users
         user = users_collection.insert_one({'first_name': first_name, 'last_name': last_name, 'email': email, 'password': hashed_password, 'active_chores': []})
@@ -171,7 +170,6 @@ class Users:
         """
         Post a review.
         """
-        from api.v1.utils.providersUtils import Providers
         user = Users.get_user_from_session_id(session_id)
         if not user:
             return None
