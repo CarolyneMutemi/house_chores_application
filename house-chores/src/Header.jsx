@@ -33,7 +33,7 @@ function Header() {
       serviceIn.classList.remove('hide')
     }
     fetchUser()
-  }, [])
+  }, [session_id])
 
   function logOutUser (session_id) {
     setUser(null)

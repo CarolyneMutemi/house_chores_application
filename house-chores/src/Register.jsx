@@ -5,20 +5,10 @@ import closeEye from "./assets/eye-off.svg"
 import openEye from "./assets/eye.svg"
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useState } from 'react';
-import {config, setCookie } from './usePost';
+import { isEmail, config, setCookie } from './usePost';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Cookies from 'js-cookie';
 
-function isEmail(emailAdress){
-  let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-if (emailAdress.match(regex)) 
-  return true; 
-
- else 
-  return false; 
-}
 
 export default function Register() {
   const navigate = useNavigate()
@@ -28,11 +18,7 @@ export default function Register() {
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
-  
 
-  function test() {
-    console.log('test')
-  }
 
   async function submit() {
     const data = {first_name, last_name, email, password}
@@ -79,7 +65,6 @@ export default function Register() {
           }else {
             const data = await res.json()
             setCookie('session_id', data.session_id, data.expiration_time)
-            console.log(Cookies.get('session_id'))
             setIsLoading(false)
             config.logInState = true
             navigate(-1, {replace: true})

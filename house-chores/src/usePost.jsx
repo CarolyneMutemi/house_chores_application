@@ -55,3 +55,14 @@ export async function logout(session_id) {
         return null
     }
 }
+
+
+export function isEmail(emailAdress){
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  
+  if (emailAdress.match(regex)) 
+    return true; 
+  
+   else 
+    return false; 
+  }
