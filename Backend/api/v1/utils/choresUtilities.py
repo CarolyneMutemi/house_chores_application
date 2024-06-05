@@ -21,7 +21,8 @@ def convert_chore_obj(chore):
                        'client_name': client_name,
                        'provider_name': provider_name,
                        'date': chore['date'],
-                       'chore_token': chore['chore_token']
+                       'chore_token': chore['chore_token'],
+                       'service': chore.get('name')
                        }
     return converted_chore
 
@@ -51,7 +52,7 @@ class Chores:
             chore = chores_collection.find_one({'_id': inserted_chore.inserted_id})
             chore_id = str(inserted_chore.inserted_id)
             key = f'chore_{chore_token}'
-            expire_time = 300
+            expire_time = 600
             redis_client.setex(key, expire_time, chore_id)
             
             users_collection = mongo.db.users

@@ -10,6 +10,7 @@ function Header() {
   const navigate = useNavigate()
   const path = location.pathname
 
+  console.log('------------->>>',path)
   function home() {
     navigate('/')
   }
@@ -22,7 +23,7 @@ function Header() {
     setUser(user);
   };
 
-  useEffect( () => {
+  useEffect(() => {
     const serviceOut = document.getElementById('services-out')
     const serviceIn = document.getElementById('services-in')
     if (path === '/') {
@@ -32,6 +33,9 @@ function Header() {
       serviceOut.classList.remove('hide')
       serviceIn.classList.remove('hide')
     }
+  })
+
+  useEffect( () => {
     fetchUser()
   }, [session_id])
 

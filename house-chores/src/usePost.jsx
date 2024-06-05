@@ -56,6 +56,22 @@ export async function logout(session_id) {
     }
 }
 
+export async function getMyChores() {
+    const session_id = Cookies.get('session_id')
+    try {
+        const response = await fetch(`http://localhost:5000/my_chores/${session_id}`)
+        if (!response.ok) {
+            throw Error(response.status)
+        } else {
+            const data = response.json()
+            return data
+        }
+    } catch(error) {
+        console.log(error)
+        return []
+    }
+}
+
 
 export function isEmail(emailAdress){
     let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
