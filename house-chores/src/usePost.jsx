@@ -15,7 +15,6 @@ export async function getUser (url) {
     const user = await response.json()
     return user
     } catch (error) {
-        console.log('=========>',error.message)
         return null
     }
 }
@@ -30,7 +29,6 @@ export async function verifyLoginState(session_id) {
         loginButtons.classList.remove('hide')
         logout.classList.add('hide')
     
-        console.log(loginName)
         const user = await getUser(`http://localhost:5000/user/${session_id}`)
         return user
       } else {

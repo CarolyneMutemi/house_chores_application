@@ -12,15 +12,15 @@ def create_chore(session_id):
     """
     Creates a chore and returns a chore_token.
     """
-    service_id = request.form.get('service_id')
+    service_id = request.json.get('service_id')
     if not service_id:
         return jsonify({'error': 'service_id missing'}), 403
     
-    provider_id = request.form.get('provider_id')
+    provider_id = request.json.get('provider_id')
     if not provider_id:
         return jsonify({'error': 'provider_id missing'}), 403
     
-    date = request.form.get('date')
+    date = request.json.get('date')
     if not date:
         return jsonify({'error': 'date missing'}), 403
 

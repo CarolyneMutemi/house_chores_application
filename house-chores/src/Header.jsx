@@ -10,13 +10,12 @@ function Header() {
   const navigate = useNavigate()
   const path = location.pathname
 
-  console.log('------------->>>',path)
   function home() {
     navigate('/')
   }
   const session_id = Cookies.get('session_id')
-  console.log('Cookies', Cookies.get('session_id'))
   const [user, setUser] = useState(null)
+  //console.log(Cookies.get('session_id'))
 
   const fetchUser = async () => {
     const user = await verifyLoginState(session_id);
