@@ -109,11 +109,11 @@ export default function SpecificService() {
                 <div className="service-data">
                   <Link to={`/rates/${provider.id}`} state={{provider, service}}><img src={price} className="provider-icons" title="Service rates."/></Link>
                   <img src={chat} title="Chat with the provider." className="provider-icons"/>
-                  <img src={call} title="Provider contact." className="provider-icons"/>
+                  <Link to={`/contact/${provider.id}`} state={provider}><img src={call} title="Provider contact." className="provider-icons"/></Link>
                   <img src={addCircle} className="provider-icons" title="Send service request" onClick={Cookies.get('session_id') ? async () => await sendRequest(service, provider.name, provider.id) : () => {Swal.fire("Log in to book a service!")}} id={`add_${provider.id}`}/>
                   <img src={ellipsis} className="provider-icons toggle-add-status" title="Waiting service confirmation." id={`pending_${provider.id}`}/>
                   <img src={checkMark} className="provider-icons toggle-add-status" title="Service confirmed." id={`confirm_${provider.id}`}/>
-                  <Link to={`/reviews/${provider.id}`} state={provider} className="provider-reviews">Reviews</Link>
+                  <Link to={`/reviews/${provider.id}`} className="provider-reviews">Reviews</Link>
                 </div>
               </div>
             </section>

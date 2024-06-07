@@ -50,7 +50,7 @@ class Users:
                                        params=params,
                                        timeout=10)
         is_deliverable = validate_email.json().get('smtpCheck')
-        if is_deliverable:
+        if is_deliverable == 'false':
             return {'error': 'mail undeliverable'}
         users_collection = mongo.db.users
         user = users_collection.insert_one({'first_name': first_name, 'last_name': last_name, 'email': email, 'password': hashed_password, 'active_chores': []})

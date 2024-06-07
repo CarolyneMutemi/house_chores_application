@@ -116,7 +116,60 @@ header h1 {
     display: none;
 }
 
-.log-in {
+.align-contact {
+    border: 1px solid black;
+    position: relative;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    position: inherit;
+    border: 1px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    height: 90%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phone-minion{
+    position: sticky;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.contact-icons{
+    width: 30px;
+    margin-right: 8px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.contact-info h4 {
+    border-bottom: 1px solid;
+    width: 80%;
+    text-align: center;
+    position: sticky;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.log-in{
     position: inherit;
     border: 1px solid black;
     border-radius: 20px;
@@ -270,6 +323,7 @@ header h1 {
     border: 1px solid;
     margin-left: 40%;
 }
+
 
 .services-section h3 {
     position: sticky;
@@ -485,6 +539,7 @@ header h1 {
     align-items: center;
     height: 80%;
     border: 1px solid #114f7e;
+    display: none;
 }
 
 .align-reviews {

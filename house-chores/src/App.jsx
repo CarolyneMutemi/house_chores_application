@@ -8,6 +8,7 @@ import SpecificService from "./specific-service"
 import Reviews from "./reviews"
 import Rates from "./rates"
 import MyChores from "./my-chores"
+import Contact from './contact';
 
 function App() {  
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path='/services/:serviceId' element={<SpecificService />} />
       <Route path='/reviews/:providerId' element={<Reviews />} />
       <Route path='/rates/:providerId' element={<Rates />} />
+      <Route path='/contact/:providerId' element={<Contact />} />
       <Route path='/mychores' element={<MyChores />} />
     </Routes>
   </Router>
