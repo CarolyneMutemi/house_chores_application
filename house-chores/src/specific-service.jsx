@@ -1,4 +1,4 @@
-import search from "./assets/search.svg"
+import searchIcon from "./assets/search.svg"
 import price from "./assets/pricetags.svg"
 import chat from "./assets/chatbox.svg"
 import call from "./assets/call.svg"
@@ -8,6 +8,7 @@ import checkMark from "./assets/checkmark-circle.svg"
 import { Link, useParams } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
 import { requestSend, simulateAcceptedRequest, addChore } from "./handleChores"
+import { filterTown } from "./handleSearch"
 import Cookies from "js-cookie"
 import Swal from 'sweetalert2'
 
@@ -20,6 +21,7 @@ export default function SpecificService() {
   const [providers, setProviders] = useState()
   const [providerId, setProviderId] = useState('')
   const [trackRequests, setTrackRequests] = useState({})
+  const [search, setSearch] = useState('')
 
   const session_id = Cookies.get('session_id')
   let obj = {}
@@ -91,27 +93,31 @@ export default function SpecificService() {
       <div className="specific-service">
           <h2>{service}</h2>
           <span className="search-span">
-            <input type="text" placeholder="Search a town..." id="search"/>
-            <label htmlFor="search"><img src={search} className="search-icon"/></label>
+            <input type="text" placeholder="Filter providers by town..." id="search" onChange={(e) => setSearch(e.target.value)}/>
+            <label htmlFor="search"><img src={searchIcon} className="search-icon"/></label>
           </span>
           <div className="service-providers">
-          {providers && providers.map((provider) => (
+          {providers && providers.filter((provider) => {
+            return search.toLowerCase() === '' ? provider : filterTown(provider, search.toLowerCase())
+          }).map((provider) => {
+            sessionStorage.setItem(`provider_${provider.id}`, JSON.stringify(provider))
+            return (
             <section className="each-provider" key={provider.id}>
               <h5>{provider.name}</h5>
               <div className="provider-data">
                 <p className="towns">Available in: <span className="towns-available">{provider.location.join(', ')}</span></p>
                 <div className="service-data">
-                  <Link to={`/rates/${provider.id}`} state={{provider, service}}><img src={price} className="provider-icons"/></Link>
-                  <img src={chat} className="provider-icons"/>
-                  <img src={call} className="provider-icons"/>
-                  <img src={addCircle} className="provider-icons" onClick={Cookies.get('session_id') ? async () => await sendRequest(service, provider.name, provider.id) : () => {Swal.fire("Log in to book a service!")}} id={`add_${provider.id}`}/>
-                  <img src={ellipsis} className="provider-icons toggle-add-status" id={`pending_${provider.id}`}/>
-                  <img src={checkMark} className="provider-icons toggle-add-status" id={`confirm_${provider.id}`}/>
+                  <Link to={`/rates/${provider.id}`} state={{provider, service}}><img src={price} className="provider-icons" title="Service rates."/></Link>
+                  <img src={chat} title="Chat with the provider." className="provider-icons"/>
+                  <img src={call} title="Provider contact." className="provider-icons"/>
+                  <img src={addCircle} className="provider-icons" title="Send service request" onClick={Cookies.get('session_id') ? async () => await sendRequest(service, provider.name, provider.id) : () => {Swal.fire("Log in to book a service!")}} id={`add_${provider.id}`}/>
+                  <img src={ellipsis} className="provider-icons toggle-add-status" title="Waiting service confirmation." id={`pending_${provider.id}`}/>
+                  <img src={checkMark} className="provider-icons toggle-add-status" title="Service confirmed." id={`confirm_${provider.id}`}/>
                   <Link to={`/reviews/${provider.id}`} state={provider} className="provider-reviews">Reviews</Link>
                 </div>
               </div>
             </section>
-          ))}
+          )})}
           </div>
       </div>
       </>

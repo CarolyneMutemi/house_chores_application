@@ -23,11 +23,9 @@ export default function SignIn() {
     if (!email.length || password.length <= 5 || !isEmail(email)) {
       document.getElementById('login-button').addEventListener('click', (e) => e.preventDefault())
       if (!email.length) {
-        console.log('<=============>')
         toast('Email is missing')
         document.getElementById('email').focus()
       } else if (!isEmail(email)) {
-        console.log('=============>')
         toast('Invalid email format.')
         document.getElementById('email').focus()
       } else  {
@@ -76,12 +74,12 @@ export default function SignIn() {
     let password = document.getElementById('password');
     if (password.type === 'password'){
       password.type = 'text';
-      hidePassword.classList.add('hide')
-      showPassword.classList.remove('hide')
-    } else {
-      password.type = 'password'
       hidePassword.classList.remove('hide')
       showPassword.classList.add('hide')
+    } else {
+      password.type = 'password'
+      hidePassword.classList.add('hide')
+      showPassword.classList.remove('hide')
     }
   }
 
@@ -100,8 +98,8 @@ export default function SignIn() {
                 <input type="email" placeholder="Email" minLength="5"  className="username" id="email" value={email.trim()} onChange={(e) => setEmail(e.target.value)} required/>
                 <label htmlFor="email"><img src={mailIcon} className="email-icon"/></label><br/>
                 <input type="password" placeholder="Password" minLength="5" className="password" id="password" value={password.trim()} onChange={(e) => setPassword(e.target.value)} required/>
-                <label><img src={closeEye} className="hidden-password" id='login-show' onClick={togglePassword}/></label>
-                <label><img src={openEye} className="clear-password hide" id='login-hide' onClick={togglePassword}/></label><br/>
+                <label><img src={closeEye} className="hidden-password hide" id='login-show' onClick={togglePassword}/></label>
+                <label><img src={openEye} className="clear-password" id='login-hide' onClick={togglePassword}/></label><br/>
                 <div className="user-options">
                   <Link to='/register' replace >Don't have an account?</Link>
                   <a href="#">Forgot password?</a>

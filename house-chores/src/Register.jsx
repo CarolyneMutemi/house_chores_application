@@ -84,12 +84,12 @@ export default function Register() {
     let password = document.getElementById('new-password');
     if (password.type === 'password'){
       password.type = 'text';
-      hidePassword.classList.add('hide')
-      showPassword.classList.remove('hide')
-    } else {
-      password.type = 'password'
       hidePassword.classList.remove('hide')
       showPassword.classList.add('hide')
+    } else {
+      password.type = 'password'
+      hidePassword.classList.add('hide')
+      showPassword.classList.remove('hide')
     }
   }
 
@@ -109,8 +109,8 @@ export default function Register() {
                 <input type="email" placeholder="Email" minLength="5"  className="username" id="new-email" value={email.trim()} onChange={(e) => setEmail(e.target.value)} required/>
                 <label htmlFor="new-email"><img src={mailIcon} className="email-icon"/></label><br/>
                 <input type="password" placeholder="Password" minLength="5" className="password" id="new-password" value={password.trim()} onChange={(e) => setPassword(e.target.value)} required/>
-                <label><img src={closeEye} className="hidden-password" id='hide-password' onClick={togglePassword}/></label>
-                <label><img src={openEye} className="clear-password hide" id='show-password' onClick={togglePassword}/></label><br/>
+                <label><img src={closeEye} className="hidden-password hide" id='hide-password' onClick={togglePassword}/></label>
+                <label><img src={openEye} className="clear-password" id='show-password' onClick={togglePassword}/></label><br/>
                 <p className="back-to-login"><Link to='/login' replace >Have an account?</Link></p><br/>
               </form>
               <button className="log-in-button" onClick={submit} id='signUpButton'>Sign up</button>
