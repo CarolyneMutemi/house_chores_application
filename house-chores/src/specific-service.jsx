@@ -52,12 +52,17 @@ export default function SpecificService() {
       const isConfirmed = await simulateAcceptedRequest(service, provider_name)
       const isPending = false
       obj[provider_id] = {isPending, isConfirmed}
-      await addChore(session_id, serviceId, provider_id)
-      setTrackRequests({...obj})
-      setTimeout(() => {
-        obj[provider_id] = {isPending, isConfirmed: !isConfirmed}
+      if (isConfirmed) {
+        await addChore(session_id, serviceId, provider_id)
         setTrackRequests({...obj})
-      }, 5000)
+        setTimeout(() => {
+          obj[provider_id] = {isPending, isConfirmed: false}
+          setTrackRequests({...obj})
+        }, 2000)
+      } else{
+        setTrackRequests({...obj})
+      }
+      console.log(trackRequests)
     }
   }
 

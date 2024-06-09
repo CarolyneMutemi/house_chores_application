@@ -9,6 +9,10 @@ html, body {
     height: 100%;
 }
 
+a {
+    color: purple;
+}
+
 body {
     margin: 0;
     background-color: rgb(191, 191, 189);
@@ -464,7 +468,6 @@ header h1 {
 }
 
 .align-rates {
-    border: 1px solid black;
     position: relative;
     height: 88%;
     display: flex;

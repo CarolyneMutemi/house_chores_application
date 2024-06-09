@@ -17,21 +17,21 @@ export default function Contact() {
 
     return (
         <>
-        <div class="align-contact">
-            <div class="contact-info">
-              <span class="icon-close" onClick={close}><img src={closeIcon} alt="close icon"/></span>
-              <img src={phoneMinion} class="phone-minion" alt="minion with banana phone"/>
+        <div className="align-contact">
+            <div className="contact-info">
+              <span className="icon-close" onClick={close}><img src={closeIcon} alt="close icon"/></span>
+              <img src={phoneMinion} className="phone-minion" alt="minion with banana phone"/>
               <h4>{provider.name} contact info!</h4>
-              <span class="contact">
-                <img src={callIcon} class="contact-icons"/>
+              <span className="contact">
+                <img src={callIcon} className="contact-icons"/>
                 <p><a href={`tel:${provider.contact.phone}`}>{provider.contact.phone}</a></p>
               </span>
-              <span class="contact">
-                <img src={whatsAppIcon} class="contact-icons"/>
+              <span className="contact">
+                <img src={whatsAppIcon} className="contact-icons"/>
                 <p><a href={`https://wa.me/${provider.contact.whatsApp}`} target="_blank">{provider.contact.whatsApp}</a></p>
               </span>
-              <span class="contact">
-                <img src={mailIcon} class="contact-icons"/>
+              <span className="contact">
+                <img src={mailIcon} className="contact-icons"/>
                 <p><a href={`mailto:${provider.contact.email}`}>{provider.contact.email}</a></p>
               </span>
             </div>

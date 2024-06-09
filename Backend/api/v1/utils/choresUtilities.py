@@ -52,7 +52,7 @@ class Chores:
             chore = chores_collection.find_one({'_id': inserted_chore.inserted_id})
             chore_id = str(inserted_chore.inserted_id)
             key = f'chore_{chore_token}'
-            expire_time = 600
+            expire_time = 120
             redis_client.setex(key, expire_time, chore_id)
             
             users_collection = mongo.db.users

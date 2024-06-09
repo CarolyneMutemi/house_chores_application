@@ -66,7 +66,7 @@ export function simulateAcceptedRequest(service, provider_name) {
                   resolve(false)
                 }
               });
-        }, 7000)
+        }, 3000)
     })
 }
 
