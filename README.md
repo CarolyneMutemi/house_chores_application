@@ -1,4 +1,4 @@
-# house_chores_application
+
 ![Pumzika banner](banner.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/CarolyneMutemi/house_chores_application)
