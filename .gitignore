@@ -3,3 +3,6 @@ Backend/api/v1/views/test.py
 Backend/.env
 **/__pycache__/
 Backend/api/v1/__pycache__/*
+Frontend/
+banner.png
+demo.gif
