@@ -1,11 +1,11 @@
 
-![Pumzika banner](banner.png)
+![Pumzika banner](Banner.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/CarolyneMutemi/house_chores_application)
 
 #### This application offers users a curated list of house chore service providers specific to their local area.
 
-![Demo of the application.](demo.gif)
+![Demo of the application.](Demo.gif)
 
 ## Notice!!
 
