@@ -11,7 +11,7 @@
 
 Please note that the project is still underway.
 
-To run the current version of the project, follow the steps below:
+To run the current version of the project, run the code below in a terminal:
 
 ```
 git clone https://github.com/CarolyneMutemi/house_chores_application
@@ -21,7 +21,11 @@ cd house_chores_application
 # To run the backend api server.
 cd Backend
 python3 -m api.v1.app
+```
 
+In a new tab, run the react server.
+
+```
 # In a new tab, run the react server.
 cd ../house-chores
 npm run dev
