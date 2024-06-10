@@ -39,7 +39,7 @@ def register_client():
     password = request.json.get('password')
     if not password:
         return jsonify({'error': 'password missing'}), 400
-    result = Users.register_user(first_name, last_name, email, password)
+    result = Users.register_user(first_name, last_name, email.lower(), password)
     error = result.get('error', None)
     if error == 'user exists':
         return jsonify(result), 409
@@ -61,7 +61,7 @@ def user_login():
     if not password:
         return jsonify({'error': 'missing password'}), 403
 
-    result = Users.log_in(email, password)
+    result = Users.log_in(email.lower(), password)
     if not result:
         return jsonify({'error': 'email not found'}), 404
     if 'error' in result:
