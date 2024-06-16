@@ -20,6 +20,7 @@ cd house_chores_application
 
 # To run the backend api server.
 cd Backend
+source env/bin/activate
 python3 -m api.v1.app
 ```
 
