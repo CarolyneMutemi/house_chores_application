@@ -2,9 +2,10 @@
 Providers utility file.
 """
 
+from ast import literal_eval
 from bson import ObjectId
 from typing import List, Dict
-from api.v1.views import mongo
+from api.v1.views import mongo, redis_client
 from api.v1.utils.servicesUtils import Services
 
 class Providers:
@@ -36,11 +37,15 @@ class Providers:
         if not service:
             return None
         all_providers = Providers.get_all_providers()
-        providers_of_service = []
-        for provider in all_providers:
-            if service['name'] in provider['services']:
-                providers_of_service.append(provider)
-        return providers_of_service
+        providers_of_service = redis_client.get(f"service_{service_id}")
+        if not providers_of_service:
+            providers_of_service = []
+            for provider in all_providers:
+                if service['name'] in provider['services']:
+                    providers_of_service.append(provider)
+            redis_client.set(f"service_{service_id}", str(providers_of_service))
+            return providers_of_service
+        return literal_eval(providers_of_service.decode('utf-8'))
     
     @staticmethod
     def get_provider_from_id(provider_id) -> Dict:
