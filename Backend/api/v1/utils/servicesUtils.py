@@ -2,37 +2,40 @@
 Services utilities.
 """
 
+from ast import literal_eval
 from typing import List, Dict
-from api.v1.views import mongo
+from api.v1.views import mongo, redis_client
+
 
 class Services:
     """
     Retrieve services data.
     """
-    all_services = []
 
     @staticmethod
-    def query_services():
+    def get_services_from_mongo() -> List:
         """
-        Updates all_services when a change is made, otherwise use the class variable.
+        Gets services from MongoDB database.
         """
-        if len(Services.all_services) == 0:
-            services_collection = mongo.db.services
-            cursor = services_collection.find()
-            services = []
-            for service in cursor:
-                service['id'] = str(service['_id'])
-                del service['_id']
-                services.append(service)
-            Services.all_services = services
+        services_collection = mongo.db.services
+        cursor = services_collection.find()
+        services = []
+        for service in cursor:
+            service['id'] = str(service['_id'])
+            del service['_id']
+            services.append(service)
+        redis_client.set('all_services', str(services))
+        return services
 
     @staticmethod
     def get_all_services() -> List:
         """
         Retrieves all services from the database.
         """
-        Services.query_services()
-        return Services.all_services
+        services = redis_client.get('all_services')
+        if not services:
+            return Services.get_services_from_mongo()
+        return literal_eval(services.decode('UTF-8'))
 
     @staticmethod
     def get_service_by_id(service_id: str) -> Dict:
