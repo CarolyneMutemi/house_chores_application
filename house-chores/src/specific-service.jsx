@@ -5,7 +5,7 @@ import call from "./assets/call.svg"
 import addCircle from "./assets/add-circle.svg"
 import ellipsis from "./assets/ellipsis-horizontal-circle.svg"
 import checkMark from "./assets/checkmark-circle.svg"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
 import { requestSend, simulateAcceptedRequest, addChore } from "./handleChores"
 import { filterTown } from "./handleSearch"
@@ -14,7 +14,8 @@ import Swal from 'sweetalert2'
 
 export default function SpecificService() {
   const { serviceId } = useParams()
-  const [service, setService] = useState('')
+  const location = useLocation()
+  const service = location.state
 
   const [error, setError] = useState()
   const [isLoading, setIsLoading] = useState()
@@ -27,14 +28,6 @@ export default function SpecificService() {
   let obj = {}
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
-    .then(res => res.json())
-    .then(data => setService(data.name))
-    .catch((error) => {
-      setService('')
-      console.log(error.message)
-    })
-
     fetch(`http://localhost:5000/providers/${serviceId}`)
     .then(res => res.json())
     .then(data => setProviders(data))
@@ -62,7 +55,6 @@ export default function SpecificService() {
       } else{
         setTrackRequests({...obj})
       }
-      console.log(trackRequests)
     }
   }
 
