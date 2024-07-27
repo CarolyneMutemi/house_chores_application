@@ -27,7 +27,7 @@ export default function Services() {
               <h3>Services</h3>
               <div className="scroll-services">
                 {
-                  services && services.map((service) => <Link to={`/services/${service.id}`} state={service.name} key={service.id}><button>{service.name}</button></Link>)
+                  services && services.map((service) => <Link to={`/providers/${service.id}`} state={service.name} key={service.id}><button>{service.name}</button></Link>)
                 }
               </div>
             </div>
