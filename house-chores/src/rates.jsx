@@ -7,8 +7,6 @@ export default function Rates() {
   const location = useLocation()
   const {provider, service} = location.state
 
-  console.log(provider, service)
-
   const navigate = useNavigate()
   function close() {
     navigate(-1)

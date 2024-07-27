@@ -19,7 +19,6 @@ export default function SignIn() {
   async function submit() {
     const data = { email, password }
 
-    console.log(data)
     if (!email.length || password.length <= 5 || !isEmail(email)) {
       document.getElementById('login-button').addEventListener('click', (e) => e.preventDefault())
       if (!email.length) {
@@ -55,7 +54,6 @@ export default function SignIn() {
             throw Error(`Error with status ${res.status} has occured.`)
           }else {
             const data = await res.json()
-            console.log(data)
             setCookie('session_id', data.session_id, data.expiration_time)
             setIsLoading(false)
             navigate(-1, {replace: true})

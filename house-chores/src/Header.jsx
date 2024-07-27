@@ -15,7 +15,6 @@ function Header() {
   }
   const session_id = Cookies.get('session_id')
   const [user, setUser] = useState(null)
-  //console.log(Cookies.get('session_id'))
 
   const fetchUser = async () => {
     const user = await verifyLoginState(session_id);
