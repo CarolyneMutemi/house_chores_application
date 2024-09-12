@@ -9,7 +9,7 @@
 
 ## Notice!!
 
-Please note that the project is still underway.
+Please note that the project is still underway - the provider's corner is yet to be done.
 
 To run the current version of the project, run the code below in a terminal:
 
@@ -33,4 +33,3 @@ npm run dev
 ```
 
 Now on the browser visit this [link](http://localhost:5173/) and explore :)
-
